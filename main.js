@@ -25,15 +25,33 @@ function getAngle (x1, y1, x2, y2) {
 function drawSlice(angle) {
     la = -(Math.PI / 2) - (angle / 2);
     ra = la + angle;
+    // Crust
     len = cy;
+    ctx.moveTo(cx, cy);
+    ctx.beginPath();
+    ctx.arc(cx, cy, len, la, ra);
+    len = cy * 91 / 100;
+    ctx.arc(cx, cy, len, ra, la, true);
+    ctx.closePath();
+
+    var radgrad = ctx.createRadialGradient(cx,cy,radius - 60,cx,cy,radius);
+    radgrad.addColorStop(0, '#D5A81B');
+    radgrad.addColorStop(0.90, '#D5A81B');
+    radgrad.addColorStop(1, '#B0821D');
+    ctx.fillStyle = radgrad;
+    ctx.fill();
+
+    // Sauce
     ctx.moveTo(cx, cy);
     ctx.beginPath();
     ctx.arc(cx, cy, len, la, ra);
     len = cy * 9 / 10;
     ctx.arc(cx, cy, len, ra, la, true);
     ctx.closePath();
-    ctx.fillStyle = '#E5BB24';
+    ctx.fillStyle = '#BB0B04';
     ctx.fill();
+
+    // Cheese
     ctx.beginPath();
     ctx.moveTo(cx, cy);
     ctx.arc(cx, cy, len, la, ra);
@@ -74,8 +92,8 @@ function drawSlice(angle) {
 function calc_area_for_big_angle(angle, fraction_in_triangles, radius) {
     /* Calculate the area for wide slices where fraction_in_triangles of angle
     is used in the triangles.
-
-          /\-----------|-----------/\
+           ________________________
+          /\           |           /\
          /   \         |90       /   \
         |      \      l|       /      |
         |      r \     |     / r      |
@@ -115,7 +133,7 @@ function halve_slice_big_angle(angle, radius) {
         diff_pct = (area_of_half_slice - area) / area_of_half_slice;
         // console.log("Loop " + count + ": angle " + angle.toFixed(3) + ", tried fraction " + fraction_in_triangles.toFixed(3) + " and got difference of " + area_of_half_slice.toFixed(4) + " - " + area.toFixed(4) + " = " + (diff_pct * 100).toFixed(2) + "%");
         height_of_line = Math.cos((angle * fraction_in_triangles) / 2) * radius;  //  l
-        if (Math.abs(diff_pct) < 0.005) {
+        if (Math.abs(diff_pct) < 0.001) {
             done = true;
             break;
         }
