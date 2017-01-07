@@ -28,4 +28,5 @@ div.push, div.footer { height: 1.0em; }
 
 #main_canvas {
     background-color: #FFF2DF;
+    cursor: ew-resize;
 }

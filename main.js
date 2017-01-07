@@ -201,7 +201,7 @@ var isMouseDown = false;
 
 canvas.addEventListener('mousedown', onMouseDown);
 canvas.addEventListener('mouseup', onMouseUp);
-canvas.addEventListener('mouseleave', onMouseUp);
+canvas.addEventListener('mouseleave', onMouseLeave);
 canvas.addEventListener('mousemove', onMouseMove);
 
 
@@ -248,6 +248,15 @@ function onMouseDown(event) {
 function onMouseUp(event) {
     // event.preventDefault();
     isMouseDown = false;
+}
+
+
+function onMouseLeave(event) {
+    // TODO: I'm undecided about what to do when leaving the canvas.
+    if (event.clientY < canvas.offsetTop || event.clientY > canvas.offsetTop + cy) {
+        // event.preventDefault();
+        isMouseDown = false;
+    }
 }
 
 
