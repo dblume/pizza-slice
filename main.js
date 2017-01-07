@@ -235,6 +235,7 @@ function onTouchMove(event) {
         if (!everMultiTouch) {
             touches.x2 = event.touches[1].clientX;
             touches.y2 = event.touches[1].clientY;
+            touches.distance = Math.sqrt((touches.x2 - touches.x1) * (touches.x2 - touches.x1) + (touches.y2 - touches.y1) * (touches.y2 - touches.y1));
             everMultiTouch = true;
         }
     }
