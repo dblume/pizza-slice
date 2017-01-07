@@ -1,6 +1,6 @@
 # Dividing the Last Pizza Slice
 
-Drag left and right on the pizza slice at the [Last Pizza Slice](http://pizza.dlma.com).  Notice how the the straight horizontal cut that evenly divides the pizza moves up and down a little?  That's it. That's all this website does. We're done here.
+Drag left and right on the pizza slice at the [**Last Pizza Slice**](http://pizza.dlma.com).  Notice how the the straight horizontal cut that evenly divides the pizza moves up and down a little?  That's it. That's all this website does. We're done here.
 
 ## Origin
 
