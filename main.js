@@ -188,7 +188,7 @@ canvas.addEventListener("wheel", function(e) {
 
 
 // Also see http://photos.dlma.com/swipe.js
-var lastTouchX;
+var touches = {x1:0, y1:0, x2:0, y2:0, distance:0};
 var isTouching = false;
 var everMultiTouch = false;
 
@@ -211,9 +211,15 @@ function onTouchStart(event) {
         everMultiTouch = false;
     } else {
         everMultiTouch = true;
+        touches.x2 = event.touches[1].clientX;
+        touches.y2 = event.touches[1].clientY;
     }
     isTouching = true;
-    lastTouchX = event.touches[0].clientX;
+    touches.x1 = event.touches[0].clientX;
+    touches.y1 = event.touches[0].clientY;
+    if (event.targetTouches.length > 1) {
+        touches.distance = Math.sqrt((touches.x2 - touches.x1) * (touches.x2 - touches.x1) + (touches.y2 - touches.y1) * (touches.y2 - touches.y1));
+    }
 }
 
 
@@ -224,15 +230,34 @@ function onTouchEnd(event) {
 
 
 function onTouchMove(event) {
-    var touchX = event.touches[0].clientX;
+    var touchX1 = event.touches[0].clientX;
     if (event.targetTouches.length > 1) {
-        everMultiTouch = true;
+        if (!everMultiTouch) {
+            touches.x2 = event.touches[1].clientX;
+            touches.y2 = event.touches[1].clientY;
+            everMultiTouch = true;
+        }
     }
-    if (isTouching && !everMultiTouch) {
-        var dx = touchX - lastTouchX;
-        // console.log("Change angle by " + dx + " to " + pizza_angle + ".");
-        tryToChangeAngle(pizza_angle + (dx / 2 * Math.PI / 180));
-        lastTouchX = touchX;
+    if (isTouching) {
+        if (!everMultiTouch) {
+            var dx = touchX1 - touches.x1;
+            // console.log("Change angle by " + dx + " to " + pizza_angle + ".");
+            tryToChangeAngle(pizza_angle + (dx / 2 * Math.PI / 180));
+            touches.x1 = touchX1;
+            touches.y1 = event.touches[0].clientY;
+        } else if (event.targetTouches.length > 1) {
+            var touchY1 = event.touches[0].clientY;
+            var touchX2 = event.touches[1].clientX;
+            var touchY2 = event.touches[1].clientY;
+            var distance = Math.sqrt((touchX2 - touchX1) * (touchX2 - touchX1) + (touchX2 - touchY1) * (touchY2 - touchY1));
+            tryToChangeAngle(pizza_angle + ((distance - touches.distance) / 2 * Math.PI / 180));
+            touches.x1 = touchX1;
+            touches.y1 = touchY1;
+            touches.x2 = touchX2;
+            touches.y2 = touchY2;
+            touches.distance = distance;
+            
+        }
         event.preventDefault();
     }
 }
