@@ -62,6 +62,7 @@ function drawSlice(angle) {
 //    document.write("Pizza angle is " + (angle * (180/Math.PI)).toFixed(2) + ".<br \>");
 
     var area_of_half_slice = radius * radius * angle / 4.0;
+    var l = 0;
     if (angle < 1.9024) {
         // We happen to know that the cut will intersect the straight edge of the slice.
         //            w
@@ -73,8 +74,10 @@ function drawSlice(angle) {
         //        \|/
         //         v
         var a = angle / 2.0;
-        var h = Math.sqrt(area_of_half_slice/(Math.cos(a)*Math.sin(a)));
-        var l = h * Math.cos(a);
+	if (a != 0) {
+            var h = Math.sqrt(area_of_half_slice/(Math.cos(a)*Math.sin(a)));
+            l = h * Math.cos(a);
+	}
     } else {
         // We happen to know that the cut will intersect the crust.
 	l = halve_slice_big_angle(angle, radius);
