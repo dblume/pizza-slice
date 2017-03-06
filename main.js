@@ -1,8 +1,8 @@
 var canvas = document.getElementById('main_canvas');
 var ctx = canvas.getContext('2d');
 
-var width = parseInt(canvas.getAttribute("width"));
-var height = parseInt(canvas.getAttribute("height"));
+var width = parseInt(canvas.getAttribute("width"), 10);
+var height = parseInt(canvas.getAttribute("height"), 10);
 var radius = height;
 var cx = width / 2;
 var cy = height;
@@ -74,7 +74,7 @@ function drawSlice(angle) {
         //        \|/
         //         v
         var a = angle / 2.0;
-	if (a != 0) {
+	if (a !== 0) {
             var h = Math.sqrt(area_of_half_slice/(Math.cos(a)*Math.sin(a)));
             l = h * Math.cos(a);
 	}
@@ -210,7 +210,7 @@ canvas.addEventListener('mousemove', onMouseMove);
 
 function onTouchStart(event) {
     event.preventDefault();
-    if (event.targetTouches.length == 1) {
+    if (event.targetTouches.length === 1) {
         everMultiTouch = false;
     } else {
         everMultiTouch = true;
@@ -281,7 +281,6 @@ function onMouseUp(event) {
 
 
 function onMouseLeave(event) {
-    // TODO: I'm undecided about what to do when leaving the canvas.
     if (event.clientY < canvas.offsetTop || event.clientY > canvas.offsetTop + cy) {
         // event.preventDefault();
         isMouseDown = false;

@@ -1,9 +1,8 @@
 * { margin: 0; }
-/* html, body { height: 100%; margin: 0; padding: 0; background: #EFE2CF; color: black } */
 html, body { height: 100%; margin: 0; padding: 0; background: #FFF2DF; color: black }
 .wrapper { 
     min-height: 100%; 
-    height: auto !important; 
+    height: auto; 
     height: 100%; 
     margin: 0 auto -1.0em;
     width: 600px;
@@ -24,7 +23,7 @@ div.footer {
     font-size: 8pt;
     width: 98%
 }
-div.push, div.footer { height: 1.0em; }
+.push, div.footer { height: 1.0em; }
 
 #main_canvas {
     background-color: #FFF2DF;

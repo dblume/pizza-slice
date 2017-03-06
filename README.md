@@ -1,3 +1,8 @@
+[![Code Climate](https://codeclimate.com/github/dblume/pizza-slice/badges/gpa.svg)](https://codeclimate.com/github/dblume/pizza-slice)
+[![Issue Count](https://codeclimate.com/github/dblume/pizza-slice/badges/issue_count.svg)](https://codeclimate.com/github/dblume/pizza-slice)
+[![License](https://img.shields.io/badge/license-MIT_license-blue.svg)](https://raw.githubusercontent.com/dblume/pizza-slice/master/LICENSE)
+![python2.x](https://img.shields.io/badge/python-2.x-yellow.svg)
+
 # Dividing the Last Pizza Slice
 
 Drag left and right on the pizza slice at the [**Last Pizza Slice**](http://pizza.dlma.com).  Notice how the the straight horizontal cut that evenly divides the pizza moves up and down a little?  That's it. That's all this website does. We're done here.
@@ -22,20 +27,7 @@ Once &theta; grows to be over 1.9 radians the problem became more interesting [a
 
 Being confronted with that challenge was irresistable.
 
-## TODO
-
-1. Add pinch/unpinch support.
-2. Add some text and maybe guidelines.
-3. Clean up the math and JavaScript.
-
 ## Is it any good?
 
 [Yes](https://news.ycombinator.com/item?id=3067434).
 
-## Did you time-travel or hack GitHub?
-
-You mean because you noticed that this README document mentions the fact that the repo made the front page of Reddit days before it actually made the front page of Reddit? Let's just say I didn't hack GitHub.
-
-## License
-
-This software uses the [MIT license](https://github.com/dblume/pizza-slice/blob/master/LICENSE).
