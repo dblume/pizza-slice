@@ -6,7 +6,7 @@ engines:
       languages:
       - ruby
       - javascript:
-        mass_threshold: 90
+          mass_threshold: 90
       - python
       - php
   fixme:
