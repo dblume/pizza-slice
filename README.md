@@ -1,5 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/dblume/pizza-slice/badges/gpa.svg)](https://codeclimate.com/github/dblume/pizza-slice)
-[![Issue Count](https://codeclimate.com/github/dblume/pizza-slice/badges/issue_count.svg)](https://codeclimate.com/github/dblume/pizza-slice)
+[![Issue Count](https://codeclimate.com/github/dblume/pizza-slice/badges/issue_count.svg)](https://codeclimate.com/github/dblume/pizza-slice/issues)
 [![License](https://img.shields.io/badge/license-MIT_license-blue.svg)](https://raw.githubusercontent.com/dblume/pizza-slice/master/LICENSE)
 ![python2.x](https://img.shields.io/badge/python-2.x-yellow.svg)
 
