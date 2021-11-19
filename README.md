@@ -1,6 +1,6 @@
 [![Code Climate](https://codeclimate.com/github/dblume/pizza-slice/badges/gpa.svg)](https://codeclimate.com/github/dblume/pizza-slice)
 [![Issue Count](https://codeclimate.com/github/dblume/pizza-slice/badges/issue_count.svg)](https://codeclimate.com/github/dblume/pizza-slice/issues)
-[![License](https://img.shields.io/badge/license-MIT_license-blue.svg)](https://raw.githubusercontent.com/dblume/pizza-slice/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT_license-blue.svg)](https://raw.githubusercontent.com/dblume/pizza-slice/main/LICENSE)
 ![python2.x](https://img.shields.io/badge/python-2.x-yellow.svg)
 
 # Dividing the Last Pizza Slice
@@ -13,11 +13,11 @@ My middle-school-aged son asked me how one would cut such a slice of pizza, give
 
 Want to solve it yourself? Stop reading, spoilers follow:
 
-![shortcut](https://raw.githubusercontent.com/dblume/pizza-slice/master/images/pizzaslice.png)
+![shortcut](https://raw.githubusercontent.com/dblume/pizza-slice/main/images/pizzaslice.png)
 
 It took me longer than it should have to figure it out. I knew it'd be possible, but my trigonometry was rusty.
 
-![shortcut](https://raw.githubusercontent.com/dblume/pizza-slice/master/images/pizza-scribbles-small.jpg)
+![shortcut](https://raw.githubusercontent.com/dblume/pizza-slice/main/images/pizza-scribbles-small.jpg)
 
 Of course, having eventually solved the simple problem, I began to suspect that the location of the cut would move subtly if you vary the angle of the slice. Obviously, that calls for an open-source website, and here we are.
 
@@ -30,4 +30,3 @@ Being confronted with that challenge was irresistable.
 ## Is it any good?
 
 [Yes](https://news.ycombinator.com/item?id=3067434).
-
